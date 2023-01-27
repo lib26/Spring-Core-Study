@@ -19,7 +19,7 @@ class ApplicationContextBasicFindTest {
     @Test
     @DisplayName("빈 이름으로 조회")
     void findBeanByName() {
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
+        MemberService memberService = ac.getBean("memberService", MemberService.class); // 이름, 타입
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
