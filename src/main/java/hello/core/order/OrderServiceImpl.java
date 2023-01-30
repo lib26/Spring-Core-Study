@@ -1,14 +1,18 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
+//lombok, @RequiredArgsConstructor가 final 필드값을 대상으로 아래의 생성자 코드를 그대로 만들어준다.
+// 근데 @MainDiscountPolicy 이거까지 적용이 되지는 않는 것 같다. 다른 설정이 또 필요하다고 한다.
 @Component
 public class OrderServiceImpl implements OrderService {
 
@@ -21,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
      * 따라서 OrderServiceImpl는 이제부터 실행에만 집중하면 된다
      */
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

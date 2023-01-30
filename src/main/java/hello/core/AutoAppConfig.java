@@ -23,8 +23,11 @@ public class AutoAppConfig {
     // Test는 AutoAppConfig에서 돌려보면 알 수 있다,
     // 하지만 또 스프링 부트는 자동 빈 등록 VS 수동 빈 등록 에 대해서 중복되는 빈이름이 있다면 오류를 발생시킨다.
     // 이 오류를 끄고싶다면 application.properties에서 spring.main.allow-bean-definition-overriding=true 를 해주면 된다.
+
+    /*
     @Bean(name = "memoryMemberRepository")
     public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
+     */
 }
