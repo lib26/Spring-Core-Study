@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LogDemoController {
 
     private final LogDemoService logDemoService;
-    private final ObjectProvider<MyLogger> myLoggerProvider; // MyLogger를 주입받는 것이 아닌 DL 할 수 있는 객체를 주입받는 것
+    private final ObjectProvider<MyLogger> myLoggerProvider; // MyLogger를 주입받는 것이 아닌 MyLogger를 찾아낼 수 있는(DL) 할 수 있는 객체를 주입받는 것
 
     @RequestMapping("log-demo") // http://localhost:8080/log-demo
     @ResponseBody // view 랜더링 없이 string 그대로 보낸다

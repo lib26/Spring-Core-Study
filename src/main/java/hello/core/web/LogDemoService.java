@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class LogDemoService {
 
-    private final ObjectProvider<MyLogger> myLoggerProvider;
+    private final ObjectProvider<MyLogger> myLoggerProvider; // MyLogger를 주입받는 것이 아닌 MyLogger를 찾아낼 수 있는(DL) 할 수 있는 객체를 주입받는 것
 
     public void logic(String id) {
         MyLogger myLogger = myLoggerProvider.getObject();
